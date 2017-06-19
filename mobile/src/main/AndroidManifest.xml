@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application>
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+
+        <service android:name="com.android.inspirationhourglass.AutoMessagingService"></service>
+
+        <receiver android:name="com.android.inspirationhourglass.MessageReadReceiver">
+            <intent-filter>
+                <action android:name="com.android.inspirationhourglass.ACTION_MESSAGE_READ" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.inspirationhourglass.MessageReplyReceiver">
+            <intent-filter>
+                <action android:name="com.android.inspirationhourglass.ACTION_MESSAGE_REPLY" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
